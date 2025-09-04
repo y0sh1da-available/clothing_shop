@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./Backend/test1/test1
+      dockerfile: Dockerfile
+    ports:
+      - "7163:80" # ánh xạ port 80 trong container sang port 7163 máy chủ
+  frontend:
+    build:
+      context: ./Frontend/clothing_shop
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80" # ánh xạ port 80 trong container sang port 4200 máy chủ
